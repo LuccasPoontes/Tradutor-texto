@@ -1,15 +1,15 @@
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
-def translate_text(text, dest='en'):
-    translator = Translator()
-    translated_text = translator.translate(text, dest=dest)
-    return translated_text.text
+def translate_text(text, target_lang='en'):
+    translator = GoogleTranslator(source='auto', target=target_lang)
+    return translator.translate(text)
 
 # Texto em português
 texto = "Olá, como você está?"
 
 # Traduzindo para inglês
-texto_traduzido = translate_text(texto, dest='en')
+texto_traduzido = translate_text(texto, target_lang='en')
 
 print("Texto original em português:", texto)
 print("Texto traduzido para inglês:", texto_traduzido)
+
