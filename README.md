@@ -4,7 +4,7 @@ Este projeto é um tradutor de texto automático que utiliza a biblioteca google
 # Tradutor de Texto Automático
 
 ## Descrição
-Este projeto é um tradutor de texto automático desenvolvido em Python. Utilizando a biblioteca `googletrans`, é possível traduzir textos de uma língua para outra de maneira rápida e eficiente. Este tradutor pode ser útil em diversas aplicações, como internacionalização de softwares, comunicação multilinguística e aprendizado de idiomas.
+Este projeto é um tradutor de texto automático desenvolvido em Python. Utilizando a biblioteca `deep-translator`, é possível traduzir textos de uma língua para outra de maneira rápida e eficiente. Este tradutor pode ser útil em diversas aplicações, como internacionalização de softwares, comunicação multilinguística e aprendizado de idiomas.
 
 ## Funcionalidades
 - Tradução de texto entre diversos idiomas suportados pelo Google Translate.
@@ -20,26 +20,26 @@ Para utilizar este projeto, você precisa ter o Python instalado em sua máquina
    cd tradutor-texto-automatico
    ```
 ### Instale a biblioteca googletrans:
-``` pip install googletrans==4.0.0-rc1 ```
+``` pip install deep-translator ```
 
 ## Uso
 Aqui está um exemplo de como utilizar o tradutor de texto:
 ```
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
-def translate_text(text, dest='en'):
-    translator = Translator()
-    translated_text = translator.translate(text, dest=dest)
-    return translated_text.text
+def translate_text(text, target_lang='en'):
+    translator = GoogleTranslator(source='auto', target=target_lang)
+    return translator.translate(text)
 
 # Texto em português
 texto = "Olá, como você está?"
 
 # Traduzindo para inglês
-texto_traduzido = translate_text(texto, dest='en')
+texto_traduzido = translate_text(texto, target_lang='en')
 
 print("Texto original em português:", texto)
 print("Texto traduzido para inglês:", texto_traduzido)
+
 ```
 
 ## Licença
